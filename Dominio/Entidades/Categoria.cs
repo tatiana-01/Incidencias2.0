@@ -8,5 +8,4 @@ namespace Dominio.Entidades;
     {
         public ICollection<Incidencia> Incidencias {get;set;}
         public ICollection<Componente> Componentes {get;set;}
-        public ICollection<TipoComponente> TipoComponentes {get;set;}
     }

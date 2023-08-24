@@ -33,9 +33,17 @@ namespace Aplicacion.Repositorio;
             return _context.Set<PersonaDireccion>().Where(expression);
         }
         
-        public async Task<IEnumerable<PersonaDireccion>> GetAllAsync()
+        public async Task<(int totalRegistros, IEnumerable<PersonaDireccion> registros)> GetAllAsync(int pageIndex, int pageSize, string search)
         {
-            return await _context.Set<PersonaDireccion>().ToListAsync();
+            var query = _context.PersonaDirecciones as IQueryable<PersonaDireccion>;
+            // if (!string.IsNullOrEmpty(search))
+            //     query = query.Where(p => p.Nombre.ToLower().Contains(search));
+            var totalRegistros = await query.CountAsync();
+            var registros = await query
+                .Skip((pageIndex - 1) * pageSize)
+                .Take(pageSize)
+                .ToListAsync();
+            return (totalRegistros, registros);
         }
         
         public async Task<PersonaDireccion> GetByIdAsync(string idPersona, int idDireccion)

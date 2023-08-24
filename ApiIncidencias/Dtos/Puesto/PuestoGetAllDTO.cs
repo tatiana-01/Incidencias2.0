@@ -1,4 +1,5 @@
 using ApiIncidencias.Dtos.Componente;
+using ApiIncidencias.Dtos.IncidenciaPuesto;
 
 namespace ApiIncidencias.Dtos.Puesto;
 public class PuestoGetAllDTO

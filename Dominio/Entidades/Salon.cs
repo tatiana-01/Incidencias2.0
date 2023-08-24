@@ -9,5 +9,6 @@ namespace Dominio.Entidades;
         public int NroPuestos {get;set;}
         public Area Area { get; set; }
         public int IdArea { get; set; }
+        public string Descripcion {get;set;}
         public ICollection<Puesto> Puestos {get;set;}
     }

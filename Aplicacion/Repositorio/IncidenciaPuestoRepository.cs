@@ -53,10 +53,10 @@ namespace Aplicacion.Repositorio;
             return (totalRegistros, registros);
         }
 
-    public async Task<IncidenciaPuesto> GetByIdAsync(int IdIncidencia, int IdPuesto)
+    public async Task<IncidenciaPuesto> GetByIdAsync(int IdIncidencia, int IdPuesto, int IdComponente)
         {
             return await _context.IncidenciaPuestos
-                .FirstOrDefaultAsync(p => p.IdIncidencia == IdIncidencia && p.IdPuesto == IdPuesto);
+                .FirstOrDefaultAsync(p => p.IdIncidencia == IdIncidencia && p.IdPuesto == IdPuesto && p.IdComponente == IdComponente);
         }
         
         public void Remove(IncidenciaPuesto entity)

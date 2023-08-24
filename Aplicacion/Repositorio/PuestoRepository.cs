@@ -16,7 +16,8 @@ namespace Aplicacion.Repositorio
         public override async Task<(int totalRegistros, IEnumerable<Puesto> registros)> GetAllAsync(int pageIndex, int pageSize, string search)
         {
             var query = _context.Puestos as IQueryable<Puesto>;
-            var totalRegistros = await query.CountAsync();
+            if(!string.IsNullOrEmpty(search)) query = query.Where(p=>p.Descripcion.ToLower().Contains(search));
+            var totalRegistros=await query.CountAsync();
             var registros = await query
                 .Include(p => p.Componentes)
                 .Include(p => p.IncidenciaPuestos)

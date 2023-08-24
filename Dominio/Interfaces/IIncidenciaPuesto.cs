@@ -8,7 +8,7 @@ using Dominio.Entidades;
 namespace Dominio.Interfaces;
     public interface IIncidenciaPuesto
     {
-        Task<IncidenciaPuesto> GetByIdAsync(int IdIncidencia, int IdPuesto);
+        Task<IncidenciaPuesto> GetByIdAsync(int IdIncidencia, int IdPuesto,int IdComponente);
         Task<IEnumerable<IncidenciaPuesto>> GetAllAsync();
         Task<(int totalRegistros, IEnumerable<IncidenciaPuesto> registros)> GetAllAsync(int pageIndex, int pageSize, string search);
         IEnumerable<IncidenciaPuesto> Find(Expression<Func<IncidenciaPuesto, bool>> expression);

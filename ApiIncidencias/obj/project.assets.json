@@ -6020,11 +6020,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "c:\\Users\\Tatiana Paredes C\\Desktop\\Incidencias2.0\\ApiIncidencias\\ApiIncidencias.csproj",
+      "projectUniqueName": "C:\\Users\\Tatiana Paredes C\\Desktop\\Incidencias2.0\\ApiIncidencias\\ApiIncidencias.csproj",
       "projectName": "ApiIncidencias",
-      "projectPath": "c:\\Users\\Tatiana Paredes C\\Desktop\\Incidencias2.0\\ApiIncidencias\\ApiIncidencias.csproj",
+      "projectPath": "C:\\Users\\Tatiana Paredes C\\Desktop\\Incidencias2.0\\ApiIncidencias\\ApiIncidencias.csproj",
       "packagesPath": "C:\\Users\\Tatiana Paredes C\\.nuget\\packages\\",
-      "outputPath": "c:\\Users\\Tatiana Paredes C\\Desktop\\Incidencias2.0\\ApiIncidencias\\obj\\",
+      "outputPath": "C:\\Users\\Tatiana Paredes C\\Desktop\\Incidencias2.0\\ApiIncidencias\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Tatiana Paredes C\\AppData\\Roaming\\NuGet\\NuGet.Config"

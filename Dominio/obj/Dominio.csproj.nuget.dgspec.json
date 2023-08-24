@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Users\\Tatiana Paredes C\\Desktop\\Incidencias2.0\\Dominio\\Dominio.csproj": {}
+    "C:\\Users\\Tatiana Paredes C\\Desktop\\Incidencias2.0\\Dominio\\Dominio.csproj": {}
   },
   "projects": {
-    "c:\\Users\\Tatiana Paredes C\\Desktop\\Incidencias2.0\\Dominio\\Dominio.csproj": {
+    "C:\\Users\\Tatiana Paredes C\\Desktop\\Incidencias2.0\\Dominio\\Dominio.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\Tatiana Paredes C\\Desktop\\Incidencias2.0\\Dominio\\Dominio.csproj",
+        "projectUniqueName": "C:\\Users\\Tatiana Paredes C\\Desktop\\Incidencias2.0\\Dominio\\Dominio.csproj",
         "projectName": "Dominio",
-        "projectPath": "c:\\Users\\Tatiana Paredes C\\Desktop\\Incidencias2.0\\Dominio\\Dominio.csproj",
+        "projectPath": "C:\\Users\\Tatiana Paredes C\\Desktop\\Incidencias2.0\\Dominio\\Dominio.csproj",
         "packagesPath": "C:\\Users\\Tatiana Paredes C\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\Tatiana Paredes C\\Desktop\\Incidencias2.0\\Dominio\\obj\\",
+        "outputPath": "C:\\Users\\Tatiana Paredes C\\Desktop\\Incidencias2.0\\Dominio\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Tatiana Paredes C\\AppData\\Roaming\\NuGet\\NuGet.Config"

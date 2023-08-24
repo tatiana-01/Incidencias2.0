@@ -13,6 +13,7 @@ using ApiIncidencias.Dtos.EstadoIncidencia;
 using ApiIncidencias.Dtos.EstadoVerificacion;
 using ApiIncidencias.Dtos.Genero;
 using ApiIncidencias.Dtos.Incidencia;
+using ApiIncidencias.Dtos.IncidenciaPuesto;
 using ApiIncidencias.Dtos.Pais;
 using ApiIncidencias.Dtos.Persona;
 using ApiIncidencias.Dtos.Puesto;
@@ -124,6 +125,8 @@ public class MappingProfiles : Profile
         CreateMap<Verificacion, VerificacionPostDTO>().ReverseMap();
 
         CreateMap<IncidenciaPuesto, IncidenciaPuestoDTO>().ReverseMap();
+        CreateMap<IncidenciaPuesto, IncidenciaPuestoPutDTO>().ReverseMap();
+
         CreateMap<PersonaContacto, PersonaContactoDTO>().ReverseMap();
         CreateMap<PersonaDireccion, PersonaDireccionDTO>().ReverseMap();
 

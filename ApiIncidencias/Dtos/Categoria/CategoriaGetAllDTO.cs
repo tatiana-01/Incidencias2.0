@@ -14,6 +14,5 @@ namespace ApiIncidencias.Dtos.Categoria
         public string Nombre {get; set;}
         public ICollection<IncidenciaDTO> Incidencias {get;set;}
         public ICollection<ComponenteDTO> Componentes {get;set;}
-        public ICollection<TipoComponenteDTO> TipoComponentes {get;set;}
     }
 }

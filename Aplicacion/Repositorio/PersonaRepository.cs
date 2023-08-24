@@ -41,6 +41,7 @@ namespace Aplicacion.Repositorio;
         public async Task<Persona> GetByIdAsync(string id)
         {
             return await _context.Personas
+                .Include(p => p.Verificaciones)
                 .Include(p => p.PersonaDirecciones)
                 .Include(p => p.PersonasContactos)
                 .FirstOrDefaultAsync(p => p.Id == id);
@@ -70,6 +71,7 @@ namespace Aplicacion.Repositorio;
             }
             var totalRegistros = await query.CountAsync();
             var registros = await query
+                .Include(p => p.Verificaciones)
                 .Include(p => p.PersonaDirecciones)
                 .Include(p => p.PersonasContactos)
                 .Skip((pageIndex - 1) * pageSize)

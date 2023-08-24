@@ -23,12 +23,12 @@ public class AreaController : BaseApiController
     [HttpPost]
     [ProducesResponseType(StatusCodes.Status201Created)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
-    public async Task<ActionResult<AreaPostDTO>> Post(AreaPostDTO areaDTO){
+    public async Task<ActionResult<AreaDTO>> Post(AreaPostDTO areaDTO){
         var area = _mapper.Map<Area>(areaDTO);
         this._unitOfWork.Areas.Add(area);
         await _unitOfWork.SaveAsync();
         if(area == null) return BadRequest();
-        return this._mapper.Map<AreaPostDTO>(area); 
+        return this._mapper.Map<AreaDTO>(area); 
     }
 
     [HttpGet]

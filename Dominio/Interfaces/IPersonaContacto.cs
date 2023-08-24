@@ -9,7 +9,7 @@ namespace Dominio.Interfaces;
     public interface IPersonaContacto
     {
         Task<PersonaContacto> GetByIdAsync(string idPersona, int idContacto);
-        Task<IEnumerable<PersonaContacto>> GetAllAsync();
+        Task<(int totalRegistros, IEnumerable<PersonaContacto> registros)> GetAllAsync (int pageIndex, int pageSize, string search);
         IEnumerable<PersonaContacto> Find(Expression<Func<PersonaContacto, bool>> expression);
         void Add(PersonaContacto entity);
         void AddRange(IEnumerable<PersonaContacto> entities);

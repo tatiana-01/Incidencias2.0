@@ -10,7 +10,7 @@ namespace Dominio.Interfaces;
     public interface IPersonaDireccion
     {
         Task<PersonaDireccion> GetByIdAsync(string idPersona, int idDireccion);
-        Task<IEnumerable<PersonaDireccion>> GetAllAsync();
+        Task<(int totalRegistros, IEnumerable<PersonaDireccion> registros)> GetAllAsync (int pageIndex, int pageSize, string search);
         IEnumerable<PersonaDireccion> Find(Expression<Func<PersonaDireccion, bool>> expression);
         void Add(PersonaDireccion entity);
         void AddRange(IEnumerable<PersonaDireccion> entities);

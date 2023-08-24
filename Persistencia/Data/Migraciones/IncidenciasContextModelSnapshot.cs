@@ -491,6 +491,9 @@ namespace Persistencia.Data.Migraciones
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
+                    b.Property<string>("Descripcion")
+                        .HasColumnType("longtext");
+
                     b.Property<int>("IdArea")
                         .HasColumnType("int");
 
@@ -515,9 +518,6 @@ namespace Persistencia.Data.Migraciones
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    b.Property<int>("IdCategoria")
-                        .HasColumnType("int");
-
                     b.Property<string>("Nombre")
                         .IsRequired()
                         .HasMaxLength(50)
@@ -525,9 +525,7 @@ namespace Persistencia.Data.Migraciones
 
                     b.HasKey("Id");
 
-                    b.HasIndex("IdCategoria");
-
-                    b.ToTable("TipoComponentes", (string)null);
+                    b.ToTable("TipoComponentes");
                 });
 
             modelBuilder.Entity("Dominio.Entidades.TipoContacto", b =>
@@ -853,17 +851,6 @@ namespace Persistencia.Data.Migraciones
                     b.Navigation("Area");
                 });
 
-            modelBuilder.Entity("Dominio.Entidades.TipoComponente", b =>
-                {
-                    b.HasOne("Dominio.Entidades.Categoria", "Categoria")
-                        .WithMany("TipoComponentes")
-                        .HasForeignKey("IdCategoria")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Categoria");
-                });
-
             modelBuilder.Entity("Dominio.Entidades.Usuario", b =>
                 {
                     b.HasOne("Dominio.Entidades.Persona", "Persona")
@@ -918,8 +905,6 @@ namespace Persistencia.Data.Migraciones
                     b.Navigation("Componentes");
 
                     b.Navigation("Incidencias");
-
-                    b.Navigation("TipoComponentes");
                 });
 
             modelBuilder.Entity("Dominio.Entidades.Ciudad", b =>
