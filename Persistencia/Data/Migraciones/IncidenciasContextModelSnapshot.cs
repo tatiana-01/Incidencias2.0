@@ -200,23 +200,19 @@ namespace Persistencia.Data.Migraciones
                         .HasColumnType("int");
 
                     b.Property<string>("Letra")
-                        .IsRequired()
                         .HasColumnType("varchar(1)");
 
                     b.Property<string>("LetraViaSecundaria")
-                        .IsRequired()
                         .HasColumnType("varchar(1)");
 
                     b.Property<string>("NroViaSecundaria")
-                        .IsRequired()
                         .HasMaxLength(10)
                         .HasColumnType("varchar(10)");
 
-                    b.Property<int>("Numero")
+                    b.Property<int?>("Numero")
                         .HasColumnType("int");
 
                     b.Property<string>("SufijoCardinal")
-                        .IsRequired()
                         .HasMaxLength(30)
                         .HasColumnType("varchar(30)");
 
@@ -345,7 +341,7 @@ namespace Persistencia.Data.Migraciones
                         .HasMaxLength(100)
                         .HasColumnType("varchar(100)");
 
-                    b.Property<int>("IdEstadoIncidencia")
+                    b.Property<int?>("IdEstadoIncidencia")
                         .HasColumnType("int");
 
                     b.HasKey("IdIncidencia", "IdPuesto", "IdComponente");
@@ -384,10 +380,10 @@ namespace Persistencia.Data.Migraciones
                     b.Property<DateOnly>("FechaNacimiento")
                         .HasColumnType("date");
 
-                    b.Property<int>("IdARL")
+                    b.Property<int?>("IdARL")
                         .HasColumnType("int");
 
-                    b.Property<int>("IdEPS")
+                    b.Property<int?>("IdEPS")
                         .HasColumnType("int");
 
                     b.Property<int>("IdGenero")
@@ -731,9 +727,7 @@ namespace Persistencia.Data.Migraciones
 
                     b.HasOne("Dominio.Entidades.EstadoIncidencia", "EstadoIncidencia")
                         .WithMany("IncidenciaPuestos")
-                        .HasForeignKey("IdEstadoIncidencia")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("IdEstadoIncidencia");
 
                     b.HasOne("Dominio.Entidades.Incidencia", "Incidencia")
                         .WithMany("IncidenciaPuestos")
@@ -760,15 +754,11 @@ namespace Persistencia.Data.Migraciones
                 {
                     b.HasOne("Dominio.Entidades.ARL", "ARL")
                         .WithMany("Personas")
-                        .HasForeignKey("IdARL")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("IdARL");
 
                     b.HasOne("Dominio.Entidades.EPS", "EPS")
                         .WithMany("Personas")
-                        .HasForeignKey("IdEPS")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("IdEPS");
 
                     b.HasOne("Dominio.Entidades.Genero", "Genero")
                         .WithMany("Personas")

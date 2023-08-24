@@ -13,6 +13,6 @@ namespace Dominio.Entidades;
         public Componente Componente { get; set; }
         public int IdComponente { get; set; }
         public EstadoIncidencia EstadoIncidencia { get; set; }
-        public int IdEstadoIncidencia { get; set; }
+        public int ? IdEstadoIncidencia { get; set; }
         public string Descripcion {get; set;}
     }

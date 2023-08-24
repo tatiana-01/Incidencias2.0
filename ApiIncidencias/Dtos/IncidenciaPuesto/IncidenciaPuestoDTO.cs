@@ -10,6 +10,6 @@ namespace ApiIncidencias.Dtos.IncidenciaPuesto;
         public int IdIncidencia { get; set; }
         public int IdPuesto { get; set; }
         public int IdComponente { get; set; }
-        public int IdEstadoIncidencia { get; set; }
+        public int ? IdEstadoIncidencia { get; set; }
         public string Descripcion { get; set; }
     }

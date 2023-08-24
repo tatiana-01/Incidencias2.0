@@ -61,6 +61,7 @@ public class MappingProfiles : Profile
         CreateMap<Ciudad, CiudadPostDTO>().ReverseMap();
 
         CreateMap<Componente, ComponenteDTO>().ReverseMap();
+        CreateMap<Componente, ComponenteGetAllDTO>().ReverseMap();
         CreateMap<Componente, ComponentePostDTO>().ReverseMap();
 
         CreateMap<Contacto, ContactoGetAllDTO>().ReverseMap();

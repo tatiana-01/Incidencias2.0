@@ -10,7 +10,7 @@ namespace ApiIncidencias.Dtos.Persona;
         public string Nombre {get;set;}
         public DateOnly FechaNacimiento {get;set;}
         public int IdGenero {get;set;}
-        public int IdEPS {get;set;}
-        public int IdARL {get;set;}
+        public int ? IdEPS {get;set;}
+        public int ? IdARL {get;set;}
         public int IdRol {get;set;}
     }

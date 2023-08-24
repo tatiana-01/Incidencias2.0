@@ -14,19 +14,15 @@ namespace Persistencia.Data.Configuracion;
             .IsRequired()
             .HasMaxLength(20);
 
-            builder.Property(p => p.Letra)
-            .IsRequired();
+            builder.Property(p => p.Letra);
 
             builder.Property(p => p.SufijoCardinal)
-            .IsRequired()
             .HasMaxLength(30);
 
             builder.Property(p => p.NroViaSecundaria)
-            .IsRequired()
             .HasMaxLength(10);
 
-            builder.Property(p => p.LetraViaSecundaria)
-            .IsRequired();
+            builder.Property(p => p.LetraViaSecundaria);
 
             builder.HasOne(p => p.Ciudad)
             .WithMany(p => p.Direcciones)

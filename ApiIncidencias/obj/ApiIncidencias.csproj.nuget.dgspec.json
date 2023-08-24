@@ -1,34 +1,33 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Tatiana Paredes C\\Desktop\\Incidencias2.0\\ApiIncidencias\\ApiIncidencias.csproj": {}
+    "/home/apolM01-061/Desktop/Incidencias2.0/ApiIncidencias/ApiIncidencias.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Tatiana Paredes C\\Desktop\\Incidencias2.0\\ApiIncidencias\\ApiIncidencias.csproj": {
+    "/home/apolM01-061/Desktop/Incidencias2.0/ApiIncidencias/ApiIncidencias.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Tatiana Paredes C\\Desktop\\Incidencias2.0\\ApiIncidencias\\ApiIncidencias.csproj",
+        "projectUniqueName": "/home/apolM01-061/Desktop/Incidencias2.0/ApiIncidencias/ApiIncidencias.csproj",
         "projectName": "ApiIncidencias",
-        "projectPath": "C:\\Users\\Tatiana Paredes C\\Desktop\\Incidencias2.0\\ApiIncidencias\\ApiIncidencias.csproj",
-        "packagesPath": "C:\\Users\\Tatiana Paredes C\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Tatiana Paredes C\\Desktop\\Incidencias2.0\\ApiIncidencias\\obj\\",
+        "projectPath": "/home/apolM01-061/Desktop/Incidencias2.0/ApiIncidencias/ApiIncidencias.csproj",
+        "packagesPath": "/home/apolM01-061/.nuget/packages/",
+        "outputPath": "/home/apolM01-061/Desktop/Incidencias2.0/ApiIncidencias/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Tatiana Paredes C\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "/home/apolM01-061/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
         ],
         "sources": {
-          "C:\\Program Files\\dotnet\\sdk\\7.0.305\\Sdks\\Microsoft.NET.Sdk.Web\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "C:\\Users\\Tatiana Paredes C\\Desktop\\Incidencias2.0\\Aplicacion\\Aplicacion.csproj": {
-                "projectPath": "C:\\Users\\Tatiana Paredes C\\Desktop\\Incidencias2.0\\Aplicacion\\Aplicacion.csproj"
+              "/home/apolM01-061/Desktop/Incidencias2.0/Aplicacion/Aplicacion.csproj": {
+                "projectPath": "/home/apolM01-061/Desktop/Incidencias2.0/Aplicacion/Aplicacion.csproj"
               }
             }
           }
@@ -69,6 +68,10 @@
               "target": "Package",
               "version": "[7.0.10, )"
             },
+            "Microsoft.IdentityModel.Tokens": {
+              "target": "Package",
+              "version": "[6.32.1, )"
+            },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[6.5.0, )"
@@ -93,21 +96,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.305\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/7.0.110/RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Tatiana Paredes C\\Desktop\\Incidencias2.0\\Aplicacion\\Aplicacion.csproj": {
+    "/home/apolM01-061/Desktop/Incidencias2.0/Aplicacion/Aplicacion.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Tatiana Paredes C\\Desktop\\Incidencias2.0\\Aplicacion\\Aplicacion.csproj",
+        "projectUniqueName": "/home/apolM01-061/Desktop/Incidencias2.0/Aplicacion/Aplicacion.csproj",
         "projectName": "Aplicacion",
-        "projectPath": "C:\\Users\\Tatiana Paredes C\\Desktop\\Incidencias2.0\\Aplicacion\\Aplicacion.csproj",
-        "packagesPath": "C:\\Users\\Tatiana Paredes C\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Tatiana Paredes C\\Desktop\\Incidencias2.0\\Aplicacion\\obj\\",
+        "projectPath": "/home/apolM01-061/Desktop/Incidencias2.0/Aplicacion/Aplicacion.csproj",
+        "packagesPath": "/home/apolM01-061/.nuget/packages/",
+        "outputPath": "/home/apolM01-061/Desktop/Incidencias2.0/Aplicacion/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Tatiana Paredes C\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "/home/apolM01-061/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
@@ -119,11 +122,11 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "C:\\Users\\Tatiana Paredes C\\Desktop\\Incidencias2.0\\Dominio\\Dominio.csproj": {
-                "projectPath": "C:\\Users\\Tatiana Paredes C\\Desktop\\Incidencias2.0\\Dominio\\Dominio.csproj"
+              "/home/apolM01-061/Desktop/Incidencias2.0/Dominio/Dominio.csproj": {
+                "projectPath": "/home/apolM01-061/Desktop/Incidencias2.0/Dominio/Dominio.csproj"
               },
-              "C:\\Users\\Tatiana Paredes C\\Desktop\\Incidencias2.0\\Persistencia\\Persistencia.csproj": {
-                "projectPath": "C:\\Users\\Tatiana Paredes C\\Desktop\\Incidencias2.0\\Persistencia\\Persistencia.csproj"
+              "/home/apolM01-061/Desktop/Incidencias2.0/Persistencia/Persistencia.csproj": {
+                "projectPath": "/home/apolM01-061/Desktop/Incidencias2.0/Persistencia/Persistencia.csproj"
               }
             }
           }
@@ -153,21 +156,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.305\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/7.0.110/RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Tatiana Paredes C\\Desktop\\Incidencias2.0\\Dominio\\Dominio.csproj": {
+    "/home/apolM01-061/Desktop/Incidencias2.0/Dominio/Dominio.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Tatiana Paredes C\\Desktop\\Incidencias2.0\\Dominio\\Dominio.csproj",
+        "projectUniqueName": "/home/apolM01-061/Desktop/Incidencias2.0/Dominio/Dominio.csproj",
         "projectName": "Dominio",
-        "projectPath": "C:\\Users\\Tatiana Paredes C\\Desktop\\Incidencias2.0\\Dominio\\Dominio.csproj",
-        "packagesPath": "C:\\Users\\Tatiana Paredes C\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Tatiana Paredes C\\Desktop\\Incidencias2.0\\Dominio\\obj\\",
+        "projectPath": "/home/apolM01-061/Desktop/Incidencias2.0/Dominio/Dominio.csproj",
+        "packagesPath": "/home/apolM01-061/.nuget/packages/",
+        "outputPath": "/home/apolM01-061/Desktop/Incidencias2.0/Dominio/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Tatiana Paredes C\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "/home/apolM01-061/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
@@ -220,21 +223,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.305\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/7.0.110/RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Tatiana Paredes C\\Desktop\\Incidencias2.0\\Persistencia\\Persistencia.csproj": {
+    "/home/apolM01-061/Desktop/Incidencias2.0/Persistencia/Persistencia.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Tatiana Paredes C\\Desktop\\Incidencias2.0\\Persistencia\\Persistencia.csproj",
+        "projectUniqueName": "/home/apolM01-061/Desktop/Incidencias2.0/Persistencia/Persistencia.csproj",
         "projectName": "Persistencia",
-        "projectPath": "C:\\Users\\Tatiana Paredes C\\Desktop\\Incidencias2.0\\Persistencia\\Persistencia.csproj",
-        "packagesPath": "C:\\Users\\Tatiana Paredes C\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Tatiana Paredes C\\Desktop\\Incidencias2.0\\Persistencia\\obj\\",
+        "projectPath": "/home/apolM01-061/Desktop/Incidencias2.0/Persistencia/Persistencia.csproj",
+        "packagesPath": "/home/apolM01-061/.nuget/packages/",
+        "outputPath": "/home/apolM01-061/Desktop/Incidencias2.0/Persistencia/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Tatiana Paredes C\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "/home/apolM01-061/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
@@ -246,8 +249,8 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "C:\\Users\\Tatiana Paredes C\\Desktop\\Incidencias2.0\\Dominio\\Dominio.csproj": {
-                "projectPath": "C:\\Users\\Tatiana Paredes C\\Desktop\\Incidencias2.0\\Dominio\\Dominio.csproj"
+              "/home/apolM01-061/Desktop/Incidencias2.0/Dominio/Dominio.csproj": {
+                "projectPath": "/home/apolM01-061/Desktop/Incidencias2.0/Dominio/Dominio.csproj"
               }
             }
           }
@@ -287,7 +290,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.305\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/7.0.110/RuntimeIdentifierGraph.json"
         }
       }
     }

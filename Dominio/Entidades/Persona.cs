@@ -12,9 +12,9 @@ namespace Dominio.Entidades;
         public Genero Genero {get;set;}
         public int IdGenero {get;set;}
         public EPS EPS {get;set;}
-        public int IdEPS {get;set;}
+        public int ? IdEPS {get;set;}
         public ARL ARL {get;set;}
-        public int IdARL {get;set;}
+        public int ? IdARL {get;set;}
         public Rol Rol {get;set;}
         public int IdRol {get;set;}
         public ICollection<PersonaContacto> PersonasContactos {get;set;}
