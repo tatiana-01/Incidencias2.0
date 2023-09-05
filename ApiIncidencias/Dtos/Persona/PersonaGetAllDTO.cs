@@ -14,7 +14,6 @@ namespace ApiIncidencias.Dtos.Persona;
         public int IdGenero {get;set;}
         public int IdEPS {get;set;}
         public int IdARL {get;set;}
-        public int IdRol {get;set;}
         public ICollection<PersonaContactoDTO> PersonasContactos {get;set;}
         public ICollection<IncidenciaDTO> Incidencias {get;set;}
         public ICollection<PersonaDireccionDTO> PersonaDirecciones {get;set;}

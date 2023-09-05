@@ -24,7 +24,7 @@ namespace ApiIncidencias.Controllers
             _userService=userService;
         }
 
-        [HttpPost]
+        [HttpPost("agregar")]
         [ApiVersion("1.0")]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
@@ -35,7 +35,7 @@ namespace ApiIncidencias.Controllers
             return result;
         }
 
-        [HttpGet]
+        [HttpGet("todos")]
         [Authorize(Roles ="Administrador")]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
@@ -47,6 +47,7 @@ namespace ApiIncidencias.Controllers
         }
 
         [HttpGet("{id}")]
+        [Authorize]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public async Task<ActionResult<UsuarioDTO>> Get(int id)
@@ -56,6 +57,7 @@ namespace ApiIncidencias.Controllers
         }
 
         [HttpPut("{id}")]
+        [Authorize]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public async Task<ActionResult<UsuarioDTO>> Put(int id, [FromBody] UsuarioPostDTO usuarioEdit)
@@ -63,12 +65,13 @@ namespace ApiIncidencias.Controllers
             if (usuarioEdit == null) return NotFound();
             var usuario = _mapper.Map<Usuario>(usuarioEdit);
             usuario.Id = id;
-            _unitOfWork.Usuarios.Update(usuario);
+            _userService.UpdateUser(usuario);
             await _unitOfWork.SaveAsync();
             return _mapper.Map<UsuarioDTO>(usuario);
         }
 
         [HttpDelete("{id}")]
+        [Authorize(Roles ="Administrador")]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public async Task<ActionResult> Delete(int id)

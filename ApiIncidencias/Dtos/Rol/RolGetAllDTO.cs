@@ -11,5 +11,5 @@ namespace ApiIncidencias.Dtos.Rol;
         public int Id {get;set;}
         public string Nombre {get;set;}
         public string Permisos {get;set;}
-        public ICollection<UsuarioDTO> Usuarios {get;set;} 
+        public ICollection<UsuarioGetAllDTO> Usuarios {get;set;} 
     }

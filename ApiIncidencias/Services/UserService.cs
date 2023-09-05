@@ -171,4 +171,11 @@ public class UserService : IUserService
             signingCredentials: signingCredentials);
         return jwtSecurityToken;
     }
+
+     public void UpdateUser(Usuario entity)
+    {
+        var contraseña= _passwordHasher.HashPassword(entity, entity.Contraseña);
+        entity.Contraseña=contraseña;
+        _unitOfWork.Usuarios.Update(entity);
+    }
 }

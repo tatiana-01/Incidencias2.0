@@ -1,5 +1,6 @@
 using Dominio.Entidades;
 using Dominio.Interfaces;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Persistencia;
 
@@ -7,6 +8,7 @@ namespace Aplicacion.Repositorio;
 public class UsuarioRepository : GenericRepositoryInt<Usuario>, IUsuario
 {
     private readonly IncidenciasContext _context;
+    private readonly IPasswordHasher<Usuario> _passwordHasher;
 
     public UsuarioRepository(IncidenciasContext context) : base(context)
     {
@@ -39,4 +41,6 @@ public class UsuarioRepository : GenericRepositoryInt<Usuario>, IUsuario
                 .Include(p => p.Roles)
                 .FirstOrDefaultAsync(p => p.Id == id);
     }
+ 
+    
 }

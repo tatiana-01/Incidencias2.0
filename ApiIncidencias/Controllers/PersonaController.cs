@@ -3,6 +3,7 @@ using ApiIncidencias.Helpers;
 using AutoMapper;
 using Dominio.Entidades;
 using Dominio.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ApiIncidencias.Controllers
@@ -19,8 +20,9 @@ namespace ApiIncidencias.Controllers
             _mapper = mapper;
         }
 
-        [HttpPost]
+        [HttpPost("agregar")]
         [ApiVersion("1.0")]
+        [Authorize(Roles ="Administrador")]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public async Task<ActionResult<PersonaDTO>> Post(PersonaDTO personaDTO)
@@ -32,7 +34,8 @@ namespace ApiIncidencias.Controllers
             return _mapper.Map<PersonaDTO>(persona);
         }
 
-        [HttpGet]
+        [HttpGet("todos")]
+        [Authorize(Roles ="Administrador")]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public async Task<ActionResult<Pager<PersonaGetAllDTO>>> Get([FromQuery] Params param)
@@ -43,6 +46,7 @@ namespace ApiIncidencias.Controllers
         }
 
         [HttpGet("{id}")]
+        [Authorize(Roles ="Administrador")]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public async Task<ActionResult<PersonaGetAllDTO>> Get(string id)
@@ -52,6 +56,7 @@ namespace ApiIncidencias.Controllers
         }
 
         [HttpPut("{id}")]
+        [Authorize(Roles ="Administrador")]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public async Task<ActionResult<PersonaDTO>> Put(string id, [FromBody] PersonaDTO personaEdit)
@@ -65,6 +70,7 @@ namespace ApiIncidencias.Controllers
         }
 
         [HttpDelete("{id}")]
+        [Authorize(Roles ="Administrador")]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public async Task<ActionResult> Delete(string id)

@@ -27,7 +27,7 @@ namespace Aplicacion.Repositorio
             return (totalRegistros, registros);
         }
         
-        public override async Task<Rol> GetByIdAsync(int id)
+        public async Task<Rol> GetByIdAsync(int id)
         {
             return await _context.Roles
                 .Include(p => p.Usuarios)
