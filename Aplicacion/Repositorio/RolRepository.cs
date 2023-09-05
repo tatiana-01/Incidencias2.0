@@ -20,7 +20,7 @@ namespace Aplicacion.Repositorio
                 query = query.Where(p => p.Nombre.ToLower().Contains(search));
             var totalRegistros = await query.CountAsync();
             var registros = await query
-                .Include(p => p.Personas)
+                .Include(p => p.Usuarios)
                 .Skip((pageIndex - 1) * pageSize)
                 .Take(pageSize)
                 .ToListAsync();
@@ -30,7 +30,7 @@ namespace Aplicacion.Repositorio
         public override async Task<Rol> GetByIdAsync(int id)
         {
             return await _context.Roles
-                .Include(p => p.Personas)
+                .Include(p => p.Usuarios)
                 .FirstOrDefaultAsync(p => p.Id == id);
         }
     }

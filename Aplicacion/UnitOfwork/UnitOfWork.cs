@@ -38,6 +38,7 @@ public class UnitOfWork : IUnitOfWork, IDisposable
     private TipoContactoRepository _tipoContactos;
     private TipoIncidenciaRepository _tipoIncidencias;
     private UsuarioRepository _usuarios;
+    private UsuarioRolRepository _usuarioRoles;
     private VerificacionRepository _verificaciones;
 
     public UnitOfWork(IncidenciasContext _context)
@@ -355,6 +356,18 @@ public class UnitOfWork : IUnitOfWork, IDisposable
                 _usuarios = new UsuarioRepository(context);
             }
             return _usuarios;
+        }
+    }
+
+    public IUsuarioRol UsuarioRoles
+    {
+        get
+        {
+            if (_usuarioRoles == null)
+            {
+                _usuarioRoles = new UsuarioRolRepository(context);
+            }
+            return _usuarioRoles;
         }
     }
 

@@ -33,9 +33,6 @@ namespace Persistencia.Data.Configuracion;
             .WithMany(p => p.Personas)
             .HasForeignKey(p => p.IdARL);
 
-            builder.HasOne(p => p.Rol)
-            .WithMany(p => p.Personas)
-            .HasForeignKey(p => p.IdRol);
-
+            
         }
     }

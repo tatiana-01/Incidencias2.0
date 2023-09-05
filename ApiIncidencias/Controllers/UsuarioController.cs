@@ -1,8 +1,11 @@
+using ApiIncidencias.Dtos;
 using ApiIncidencias.Dtos.Usuario;
 using ApiIncidencias.Helpers;
+using ApiIncidencias.Services;
 using AutoMapper;
 using Dominio.Entidades;
 using Dominio.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ApiIncidencias.Controllers
@@ -12,27 +15,28 @@ namespace ApiIncidencias.Controllers
     {
         private readonly IUnitOfWork _unitOfWork;
         private readonly IMapper _mapper;
+        private readonly IUserService _userService;
 
-        public UsuarioController(IUnitOfWork unitOfWork, IMapper mapper)
+        public UsuarioController(IUnitOfWork unitOfWork, IMapper mapper, IUserService userService)
         {
             this._unitOfWork = unitOfWork;
             _mapper = mapper;
+            _userService=userService;
         }
 
         [HttpPost]
         [ApiVersion("1.0")]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public async Task<ActionResult<UsuarioDTO>> Post(UsuarioPostDTO usuarioDTO)
+        public async Task<ActionResult<string>> Post(UsuarioPostDTO usuarioDTO)
         {
-            var usuario = _mapper.Map<Usuario>(usuarioDTO);
-            _unitOfWork.Usuarios.Add(usuario);
-            await _unitOfWork.SaveAsync();
-            if (usuario == null) return BadRequest();
-            return _mapper.Map<UsuarioDTO>(usuario);
+            var result = await _userService.ResgisterAsync(usuarioDTO);
+            if (usuarioDTO == null) return BadRequest();
+            return result;
         }
 
         [HttpGet]
+        [Authorize(Roles ="Administrador")]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public async Task<ActionResult<Pager<UsuarioDTO>>> Get([FromQuery] Params param)
@@ -75,5 +79,12 @@ namespace ApiIncidencias.Controllers
             await _unitOfWork.SaveAsync();
             return NoContent();
         }
+
+        [HttpPost("token")]
+       public async Task<IActionResult> GetTokenAsync(LoginDTO model){
+        var result = await _userService.GetTokenAsync(model);
+        return Ok(result);
+       }
+
     }
 }

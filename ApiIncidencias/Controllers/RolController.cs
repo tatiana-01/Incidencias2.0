@@ -3,6 +3,7 @@ using ApiIncidencias.Helpers;
 using AutoMapper;
 using Dominio.Entidades;
 using Dominio.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ApiIncidencias.Controllers
@@ -19,8 +20,9 @@ namespace ApiIncidencias.Controllers
             _mapper = mapper;
         }
 
-        [HttpPost]
+        [HttpPost("agregar")]
         [ApiVersion("1.0")]
+        [Authorize(Roles ="Administrador")]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public async Task<ActionResult<RolDTO>> Post(RolPostDTO rolDTO)
@@ -32,7 +34,8 @@ namespace ApiIncidencias.Controllers
             return _mapper.Map<RolDTO>(rol);
         }
 
-        [HttpGet]
+        [HttpGet("todos")]
+        [Authorize(Roles ="Administrador")]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public async Task<ActionResult<Pager<RolGetAllDTO>>> Get([FromQuery] Params param)
@@ -43,6 +46,7 @@ namespace ApiIncidencias.Controllers
         }
 
         [HttpGet("{id}")]
+        [Authorize(Roles ="Administrador")]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public async Task<ActionResult<RolGetAllDTO>> Get(int id)
@@ -52,6 +56,7 @@ namespace ApiIncidencias.Controllers
         }
 
         [HttpPut("{id}")]
+        [Authorize(Roles ="Administrador")]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public async Task<ActionResult<RolDTO>> Put(int id, [FromBody] RolPostDTO rolEdit)

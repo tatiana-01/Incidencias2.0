@@ -15,8 +15,6 @@ namespace Dominio.Entidades;
         public int ? IdEPS {get;set;}
         public ARL ARL {get;set;}
         public int ? IdARL {get;set;}
-        public Rol Rol {get;set;}
-        public int IdRol {get;set;}
         public ICollection<PersonaContacto> PersonasContactos {get;set;}
         public ICollection<Incidencia> Incidencias {get;set;}
         public ICollection<PersonaDireccion> PersonaDirecciones {get;set;}

@@ -12,5 +12,4 @@ namespace ApiIncidencias.Dtos.Persona;
         public int IdGenero {get;set;}
         public int ? IdEPS {get;set;}
         public int ? IdARL {get;set;}
-        public int IdRol {get;set;}
     }

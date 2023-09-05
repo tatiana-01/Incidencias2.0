@@ -33,6 +33,7 @@ namespace Dominio.Interfaces
         ITipoContacto TipoContactos {get;}
         ITipoIncidencia TipoIncidencias {get;}
         IUsuario Usuarios {get;}
+        IUsuarioRol UsuarioRoles {get;}
         IVerificacion Verificaciones {get;}
         Task<int> SaveAsync();
     }

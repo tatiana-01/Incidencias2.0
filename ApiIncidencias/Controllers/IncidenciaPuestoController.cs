@@ -43,7 +43,7 @@ namespace ApiIncidencias.Controllers
             return new Pager<IncidenciaPuestoDTO>(lstIncidenciaPuestos, entidads.totalRegistros, param.PageIndex, param.PageSize, param.Search);
         }
 
-        [HttpGet("{id}")]
+        [HttpGet("{idIncidencia}/{idPuesto}/{idComponente}")]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public async Task<ActionResult<IncidenciaPuestoDTO>> Get(int IdIncidencia, int IdPuesto, int IdComponente)
@@ -52,7 +52,7 @@ namespace ApiIncidencias.Controllers
             return _mapper.Map<IncidenciaPuestoDTO>(entidad);
         }
 
-        [HttpPut("{id}")]
+        [HttpPut("{idIncidencia}/{idPuesto}/{idComponente}")]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public async Task<ActionResult<IncidenciaPuestoDTO>> Put(int IdIncidencia, int IdPuesto, int IdComponente, [FromBody] IncidenciaPuestoPutDTO entidadEdit)

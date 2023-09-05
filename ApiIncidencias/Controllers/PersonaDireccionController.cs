@@ -42,7 +42,7 @@ namespace ApiIncidencias.Controllers
             return new Pager<PersonaDireccionDTO>(lstPersonaDirecciones, personaDireccions.totalRegistros, param.PageIndex, param.PageSize, param.Search);
         }
 
-        [HttpGet("{id}")]
+        [HttpGet("{idPersona}/{idDireccion}")]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public async Task<ActionResult<PersonaDireccionDTO>> Get(string idPersona, int idDireccion)
@@ -64,7 +64,7 @@ namespace ApiIncidencias.Controllers
         //     return _mapper.Map<PersonaDireccionDTO>(personaDireccion);
         // }
 
-        [HttpDelete("{id}")]
+        [HttpDelete("{idPersona}/{idDireccion}")]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public async Task<ActionResult> Delete(string idPersona, int idDireccion)

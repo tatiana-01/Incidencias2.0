@@ -39,6 +39,7 @@ public class IncidenciasContext : DbContext
     public DbSet<TipoContacto> TipoContactos { get; set; }
     public DbSet<TipoIncidencia> TipoIncidencias { get; set; }
     public DbSet<Usuario> Usuarios { get; set; }
+    public DbSet<UsuarioRol> UsuarioRoles { get; set; }
     public DbSet<Verificacion> Verificaciones { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)

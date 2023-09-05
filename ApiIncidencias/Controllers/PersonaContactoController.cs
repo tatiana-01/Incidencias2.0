@@ -42,12 +42,12 @@ namespace ApiIncidencias.Controllers
             return new Pager<PersonaContactoDTO>(lstPersonaContactos, entidads.totalRegistros, param.PageIndex, param.PageSize, param.Search);
         }
 
-        [HttpGet("{id}")]
+        [HttpGet("{idPersona}/{idContacto}")]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public async Task<ActionResult<PersonaContactoDTO>> Get(string idPersona, int idDireccion)
+        public async Task<ActionResult<PersonaContactoDTO>> Get(string idPersona, int idContacto)
         {
-            var entidad = await _unitOfWork.PersonaContactos.GetByIdAsync(idPersona,idDireccion);
+            var entidad = await _unitOfWork.PersonaContactos.GetByIdAsync(idPersona,idContacto);
             return _mapper.Map<PersonaContactoDTO>(entidad);
         }
 
@@ -64,12 +64,12 @@ namespace ApiIncidencias.Controllers
         //     return _mapper.Map<PersonaContactoDTO>(entidad);
         // }
 
-        [HttpDelete("{id}")]
+        [HttpDelete("{idPersona}/{idContacto}")]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public async Task<ActionResult> Delete(string idPersona, int idDireccion)
+        public async Task<ActionResult> Delete(string idPersona, int idContacto)
         {
-            var entidad = await _unitOfWork.PersonaContactos.GetByIdAsync(idPersona,idDireccion);
+            var entidad = await _unitOfWork.PersonaContactos.GetByIdAsync(idPersona,idContacto);
             if (entidad == null) BadRequest();
             _unitOfWork.PersonaContactos.Remove(entidad);
             await _unitOfWork.SaveAsync();
