@@ -4,7 +4,9 @@ using System.Linq;
 using System.Reflection;
 using System.Threading.Tasks;
 using Dominio.Entidades;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Persistencia.Seeding;
 
 namespace Persistencia;
 public class IncidenciasContext : DbContext
@@ -44,8 +46,10 @@ public class IncidenciasContext : DbContext
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
+        
         base.OnModelCreating(modelBuilder);
         modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
+        SeedingInicial.Seed(modelBuilder);
     }
 
 }

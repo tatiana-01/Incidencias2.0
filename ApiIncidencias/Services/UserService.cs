@@ -27,6 +27,9 @@ public class UserService : IUserService
         _unitOfWork = unitOfWork;
         _passwordHasher = passwordHasher;
     }
+    public UserService(IPasswordHasher<Usuario> passwordHasher){
+        _passwordHasher = passwordHasher;
+    }
     public async Task<string> addRoleAsync(AddRoleDTO model)
     {
          var usuario = await _unitOfWork.Usuarios
@@ -177,5 +180,10 @@ public class UserService : IUserService
         var contraseña= _passwordHasher.HashPassword(entity, entity.Contraseña);
         entity.Contraseña=contraseña;
         _unitOfWork.Usuarios.Update(entity);
+    }
+
+    public string HashPasswordUser(Usuario usuario)
+    {
+        return usuario.Contraseña=_passwordHasher.HashPassword(usuario,usuario.Contraseña);
     }
 }
