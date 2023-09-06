@@ -35,7 +35,7 @@ namespace ApiIncidencias.Controllers
         }
 
         [HttpGet("todos")]
-        [Authorize(Roles ="Administrador,Persona")]
+        [Authorize]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public async Task<ActionResult<Pager<ARLGetAllDTO>>> Get([FromQuery] Params param)
@@ -46,7 +46,7 @@ namespace ApiIncidencias.Controllers
         }
 
         [HttpGet("{id}")]
-        [Authorize(Roles ="Administrador,Persona")]
+        [Authorize]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public async Task<ActionResult<ARLGetAllDTO>> Get(int id)

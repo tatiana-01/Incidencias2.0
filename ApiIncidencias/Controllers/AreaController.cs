@@ -4,6 +4,7 @@ using Aplicacion.Repositorio;
 using AutoMapper;
 using Dominio.Entidades;
 using Dominio.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ApiIncidencias.Controllers;
@@ -21,6 +22,7 @@ public class AreaController : BaseApiController
     }
 
     [HttpPost]
+    [Authorize(Roles="Administrador, Trainer")]
     [ProducesResponseType(StatusCodes.Status201Created)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
     public async Task<ActionResult<AreaDTO>> Post(AreaPostDTO areaDTO){
@@ -32,6 +34,7 @@ public class AreaController : BaseApiController
     }
 
     [HttpGet]
+    [Authorize]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
     public async Task<ActionResult<Pager<AreaGetAllDTO>>> Get([FromQuery] Params areaParam)
@@ -43,6 +46,7 @@ public class AreaController : BaseApiController
 
     [HttpGet("{id}")]
     [MapToApiVersion("1.1")]
+    [Authorize]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
     public async Task<ActionResult<AreaGetAllDTO>> Get (int id){
@@ -52,6 +56,7 @@ public class AreaController : BaseApiController
     }
 
     [HttpDelete("{id}")]
+    [Authorize(Roles="Administrador, Trainer")]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
     public async Task<ActionResult> Delete(int id){
@@ -63,6 +68,7 @@ public class AreaController : BaseApiController
     }
 
     [HttpPut("{id}")]
+    [Authorize(Roles="Administrador, Trainer")]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
     public async Task<ActionResult<AreaDTO>> Put (int id, [FromBody] AreaPostDTO areaEdicion){

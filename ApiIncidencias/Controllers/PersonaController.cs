@@ -35,7 +35,7 @@ namespace ApiIncidencias.Controllers
         }
 
         [HttpGet("todos")]
-        [Authorize(Roles ="Administrador")]
+        [Authorize]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public async Task<ActionResult<Pager<PersonaGetAllDTO>>> Get([FromQuery] Params param)
@@ -46,9 +46,11 @@ namespace ApiIncidencias.Controllers
         }
 
         [HttpGet("{id}")]
-        [Authorize(Roles ="Administrador")]
+        [Authorize]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
+
+        
         public async Task<ActionResult<PersonaGetAllDTO>> Get(string id)
         {
             var persona = await _unitOfWork.Personas.GetByIdAsync(id);

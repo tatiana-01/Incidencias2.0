@@ -22,7 +22,7 @@ namespace ApiIncidencias.Controllers
 
         [HttpPost]
         [ApiVersion("1.0")]
-        [Authorize(Roles="Administrador, Trainer")]
+        [Authorize(Roles="Administrador")]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public async Task<ActionResult<AreaContactoDTO>> Post(AreaContactoPostDTO areaContactoDTO)
@@ -35,7 +35,7 @@ namespace ApiIncidencias.Controllers
         }
 
         [HttpGet]
-        [Authorize(Roles="Administrador, Trainer")]
+        [Authorize]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public async Task<ActionResult<Pager<AreaContactoGetAllDTO>>> Get([FromQuery] Params param)
@@ -46,7 +46,7 @@ namespace ApiIncidencias.Controllers
         }
 
         [HttpGet("{id}")]
-        [Authorize(Roles="Administrador, Trainer")]
+        [Authorize]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public async Task<ActionResult<AreaContactoGetAllDTO>> Get(int id)
@@ -56,7 +56,7 @@ namespace ApiIncidencias.Controllers
         }
 
         [HttpPut("{id}")]
-        [Authorize(Roles="Administrador, Trainer")]
+        [Authorize(Roles="Administrador")]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public async Task<ActionResult<AreaContactoDTO>> Put(int id, [FromBody] AreaContactoPostDTO areaContactoEdit)
@@ -70,7 +70,7 @@ namespace ApiIncidencias.Controllers
         }
 
         [HttpDelete("{id}")]
-        [Authorize(Roles="Administrador, Trainer")]
+        [Authorize(Roles="Administrador")]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public async Task<ActionResult> Delete(int id)

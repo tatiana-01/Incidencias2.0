@@ -3,6 +3,7 @@ using ApiIncidencias.Helpers;
 using AutoMapper;
 using Dominio.Entidades;
 using Dominio.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ApiIncidencias.Controllers
@@ -21,6 +22,7 @@ namespace ApiIncidencias.Controllers
 
         [HttpPost]
         [ApiVersion("1.0")]
+        [Authorize(Roles="Administrador, Trainer")]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public async Task<ActionResult<ComponenteDTO>> Post(ComponentePostDTO componenteDTO)
@@ -33,6 +35,7 @@ namespace ApiIncidencias.Controllers
         }
 
         [HttpGet]
+        [Authorize]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public async Task<ActionResult<Pager<ComponenteGetAllDTO>>> Get([FromQuery] Params param)
@@ -43,6 +46,7 @@ namespace ApiIncidencias.Controllers
         }
 
         [HttpGet("{id}")]
+        [Authorize]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public async Task<ActionResult<ComponenteGetAllDTO>> Get(int id)
@@ -52,6 +56,7 @@ namespace ApiIncidencias.Controllers
         }
 
         [HttpPut("{id}")]
+        [Authorize(Roles="Administrador, Trainer")]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public async Task<ActionResult<ComponenteDTO>> Put(int id, [FromBody] ComponentePostDTO componenteEdit)
@@ -65,6 +70,7 @@ namespace ApiIncidencias.Controllers
         }
 
         [HttpDelete("{id}")]
+        [Authorize(Roles="Administrador, Trainer")]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public async Task<ActionResult> Delete(int id)
