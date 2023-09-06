@@ -23,7 +23,7 @@ builder.Services.AddApplicationServices();
 builder.Services.AddJwt(builder.Configuration);
 builder.Services.AddDbContext<IncidenciasContext>(optionsBuilder =>
 {
-    string connectionString = builder.Configuration.GetConnectionString("ConexMysqlPc");
+    string connectionString = builder.Configuration.GetConnectionString("ConexMysqlCampus");
     optionsBuilder.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString));
 });
 

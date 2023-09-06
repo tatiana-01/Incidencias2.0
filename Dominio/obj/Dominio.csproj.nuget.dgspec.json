@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Tatiana Paredes C\\Desktop\\Incidencias2.0\\Dominio\\Dominio.csproj": {}
+    "C:\\Users\\APM01-61\\Desktop\\Incidencias2.0\\Dominio\\Dominio.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Tatiana Paredes C\\Desktop\\Incidencias2.0\\Dominio\\Dominio.csproj": {
+    "C:\\Users\\APM01-61\\Desktop\\Incidencias2.0\\Dominio\\Dominio.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Tatiana Paredes C\\Desktop\\Incidencias2.0\\Dominio\\Dominio.csproj",
+        "projectUniqueName": "C:\\Users\\APM01-61\\Desktop\\Incidencias2.0\\Dominio\\Dominio.csproj",
         "projectName": "Dominio",
-        "projectPath": "C:\\Users\\Tatiana Paredes C\\Desktop\\Incidencias2.0\\Dominio\\Dominio.csproj",
-        "packagesPath": "C:\\Users\\Tatiana Paredes C\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Tatiana Paredes C\\Desktop\\Incidencias2.0\\Dominio\\obj\\",
+        "projectPath": "C:\\Users\\APM01-61\\Desktop\\Incidencias2.0\\Dominio\\Dominio.csproj",
+        "packagesPath": "C:\\Users\\APM01-61\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\APM01-61\\Desktop\\Incidencias2.0\\Dominio\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Tatiana Paredes C\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\APM01-61\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
@@ -67,7 +67,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.305\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     }

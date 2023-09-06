@@ -58,7 +58,7 @@ namespace ApiIncidencias.Controllers
         }
 
         [HttpPut("{id}")]
-        [Authorize(Roles ="Administrador")]
+        [Authorize]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public async Task<ActionResult<PersonaDTO>> Put(string id, [FromBody] PersonaDTO personaEdit)

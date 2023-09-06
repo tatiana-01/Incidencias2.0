@@ -4,6 +4,7 @@ using ApiIncidencias.Helpers;
 using AutoMapper;
 using Dominio.Entidades;
 using Dominio.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ApiIncidencias.Controllers
@@ -22,6 +23,7 @@ namespace ApiIncidencias.Controllers
 
         [HttpPost]
         [ApiVersion("1.0")]
+        [Authorize(Roles="Administrador, Trainer, Camper")]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public async Task<ActionResult<IncidenciaPuestoDTO>> Post(IncidenciaPuestoDTO entidadDTO)
@@ -34,6 +36,7 @@ namespace ApiIncidencias.Controllers
         }
 
         [HttpGet]
+        [Authorize]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public async Task<ActionResult<Pager<IncidenciaPuestoDTO>>> Get([FromQuery] Params param)
@@ -44,6 +47,7 @@ namespace ApiIncidencias.Controllers
         }
 
         [HttpGet("{idIncidencia}/{idPuesto}/{idComponente}")]
+        [Authorize]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public async Task<ActionResult<IncidenciaPuestoDTO>> Get(int IdIncidencia, int IdPuesto, int IdComponente)
@@ -53,6 +57,7 @@ namespace ApiIncidencias.Controllers
         }
 
         [HttpPut("{idIncidencia}/{idPuesto}/{idComponente}")]
+        [Authorize(Roles="Administrador, Trainer, Camper")]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public async Task<ActionResult<IncidenciaPuestoDTO>> Put(int IdIncidencia, int IdPuesto, int IdComponente, [FromBody] IncidenciaPuestoPutDTO entidadEdit)
@@ -68,6 +73,7 @@ namespace ApiIncidencias.Controllers
         }
 
         [HttpDelete("{id}")]
+        [Authorize(Roles="Administrador, Trainer")]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public async Task<ActionResult> Delete(int IdIncidencia, int IdPuesto, int IdComponente)

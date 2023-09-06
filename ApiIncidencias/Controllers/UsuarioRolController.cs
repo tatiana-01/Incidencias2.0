@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using ApiIncidencias.Dtos;
 using ApiIncidencias.Services;
 using Dominio.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ApiIncidencias.Controllers;
@@ -17,12 +18,14 @@ namespace ApiIncidencias.Controllers;
         _unitOfWork=unitOfWork;
        }
         [HttpPost("addrol")]
+        [Authorize(Roles ="Administrador")]
         public async Task<IActionResult> AddRolAsync(AddRoleDTO model){
             var result= await _userService.addRoleAsync(model);
             return Ok(result);
         }
 
         [HttpDelete("{idUsuario}/{idRol}")]
+        [Authorize(Roles ="Administrador")]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public async Task<ActionResult> Delete(int idUsuario, int idRol)

@@ -3,6 +3,7 @@ using ApiIncidencias.Helpers;
 using AutoMapper;
 using Dominio.Entidades;
 using Dominio.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ApiIncidencias.Controllers
@@ -21,6 +22,7 @@ namespace ApiIncidencias.Controllers
 
         [HttpPost]
         [ApiVersion("1.0")]
+        [Authorize]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public async Task<ActionResult<PersonaDireccionDTO>> Post(PersonaDireccionDTO personaDireccionDTO)
@@ -33,6 +35,7 @@ namespace ApiIncidencias.Controllers
         }
 
         [HttpGet]
+        [Authorize]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public async Task<ActionResult<Pager<PersonaDireccionDTO>>> Get([FromQuery] Params param)
@@ -43,6 +46,7 @@ namespace ApiIncidencias.Controllers
         }
 
         [HttpGet("{idPersona}/{idDireccion}")]
+        [Authorize]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public async Task<ActionResult<PersonaDireccionDTO>> Get(string idPersona, int idDireccion)
@@ -65,6 +69,7 @@ namespace ApiIncidencias.Controllers
         // }
 
         [HttpDelete("{idPersona}/{idDireccion}")]
+        [Authorize]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public async Task<ActionResult> Delete(string idPersona, int idDireccion)

@@ -22,7 +22,7 @@ namespace ApiIncidencias.Controllers
 
         [HttpPost]
         [ApiVersion("1.0")]
-        [Authorize(Roles="Administrador")]
+        [Authorize]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public async Task<ActionResult<DireccionDTO>> Post(DireccionPostDTO direccionDTO)
@@ -56,7 +56,7 @@ namespace ApiIncidencias.Controllers
         }
 
         [HttpPut("{id}")]
-        [Authorize(Roles="Administrador")]
+        [Authorize]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public async Task<ActionResult<DireccionDTO>> Put(int id, [FromBody] DireccionPostDTO direccionEdit)
@@ -70,7 +70,7 @@ namespace ApiIncidencias.Controllers
         }
 
         [HttpDelete("{id}")]
-        [Authorize(Roles="Administrador")]
+        [Authorize]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public async Task<ActionResult> Delete(int id)

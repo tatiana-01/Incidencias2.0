@@ -56,7 +56,7 @@ namespace ApiIncidencias.Controllers
         }
 
         [HttpPut("{id}")]
-        [Authorize(Roles="Administrador, Trainer")]
+        [Authorize(Roles="Administrador, Trainer, Camper")]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public async Task<ActionResult<IncidenciaDTO>> Put(int id, [FromBody] IncidenciaPostDTO incidenciaEdit)
