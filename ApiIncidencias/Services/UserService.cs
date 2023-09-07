@@ -38,9 +38,9 @@ public class UserService : IUserService
         {
             return $"No existe algún usuario registrado con la cuenta {model.Username}.";
         }
-        var resultado = _passwordHasher.VerifyHashedPassword(usuario, usuario.Contraseña, model.Password);
+        /* var resultado = _passwordHasher.VerifyHashedPassword(usuario, usuario.Contraseña, model.Password);
         if (resultado == PasswordVerificationResult.Success)
-        {
+        { */
             var rolExiste = _unitOfWork.Roles
                                         .Find(u => u.Nombre == model.Role)
                                         .FirstOrDefault();
@@ -58,8 +58,8 @@ public class UserService : IUserService
                 return $"Rol {model.Role} agregado a la cuenta {model.Username} de forma exitosa.";
             }
             return $"Rol {model.Role} no encontrado.";
-        }
-        return $"Credenciales incorrectas para el usuario {usuario.UsuarioPersona}.";
+        //}
+       // return $"Credenciales incorrectas para el usuario {usuario.UsuarioPersona}.";
     }
 
     public async Task<DatosUsuarioDTO> GetTokenAsync(LoginDTO model)

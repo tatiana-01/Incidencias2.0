@@ -5235,19 +5235,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\APM01-61\\.nuget\\packages\\": {}
+    "C:\\Users\\Tatiana Paredes C\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\APM01-61\\Desktop\\Incidencias2.0\\Aplicacion\\Aplicacion.csproj",
+      "projectUniqueName": "C:\\Users\\Tatiana Paredes C\\Desktop\\Incidencias2.0\\Aplicacion\\Aplicacion.csproj",
       "projectName": "Aplicacion",
-      "projectPath": "C:\\Users\\APM01-61\\Desktop\\Incidencias2.0\\Aplicacion\\Aplicacion.csproj",
-      "packagesPath": "C:\\Users\\APM01-61\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\APM01-61\\Desktop\\Incidencias2.0\\Aplicacion\\obj\\",
+      "projectPath": "C:\\Users\\Tatiana Paredes C\\Desktop\\Incidencias2.0\\Aplicacion\\Aplicacion.csproj",
+      "packagesPath": "C:\\Users\\Tatiana Paredes C\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Tatiana Paredes C\\Desktop\\Incidencias2.0\\Aplicacion\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\APM01-61\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\Tatiana Paredes C\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net7.0"
@@ -5259,11 +5259,11 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "C:\\Users\\APM01-61\\Desktop\\Incidencias2.0\\Dominio\\Dominio.csproj": {
-              "projectPath": "C:\\Users\\APM01-61\\Desktop\\Incidencias2.0\\Dominio\\Dominio.csproj"
+            "C:\\Users\\Tatiana Paredes C\\Desktop\\Incidencias2.0\\Dominio\\Dominio.csproj": {
+              "projectPath": "C:\\Users\\Tatiana Paredes C\\Desktop\\Incidencias2.0\\Dominio\\Dominio.csproj"
             },
-            "C:\\Users\\APM01-61\\Desktop\\Incidencias2.0\\Persistencia\\Persistencia.csproj": {
-              "projectPath": "C:\\Users\\APM01-61\\Desktop\\Incidencias2.0\\Persistencia\\Persistencia.csproj"
+            "C:\\Users\\Tatiana Paredes C\\Desktop\\Incidencias2.0\\Persistencia\\Persistencia.csproj": {
+              "projectPath": "C:\\Users\\Tatiana Paredes C\\Desktop\\Incidencias2.0\\Persistencia\\Persistencia.csproj"
             }
           }
         }
@@ -5293,7 +5293,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.305\\RuntimeIdentifierGraph.json"
       }
     }
   }

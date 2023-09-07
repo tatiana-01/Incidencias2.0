@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Persistencia;
 
@@ -10,9 +11,11 @@ using Persistencia;
 namespace Persistencia.Data.Migraciones
 {
     [DbContext(typeof(IncidenciasContext))]
-    partial class IncidenciasContextModelSnapshot : ModelSnapshot
+    [Migration("20230906213435_moreSeeding")]
+    partial class moreSeeding
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -616,7 +619,7 @@ namespace Persistencia.Data.Migraciones
                         new
                         {
                             Id = 1,
-                            Contraseña = "AQAAAAIAAYagAAAAEN+Q9HJ2viSwM5XsgX4FMTtTP4HGZ5L9JXIaXz/FCVNnrDnjDC39ZmKAmJqLEt7mUQ==",
+                            Contraseña = "AQAAAAIAAYagAAAAEBTmJbjytdBTmHD75zBB6uRBgWOQ0x3Rjw2Spl3KoehRFfAH9rpVtqpdsM95f4Rfhg==",
                             Email = "admin@corre.com",
                             IdPersona = "123456",
                             UsuarioPersona = "Admin"
@@ -641,7 +644,7 @@ namespace Persistencia.Data.Migraciones
                         new
                         {
                             IdUsuario = 1,
-                            IdRol = 2
+                            IdRol = 1
                         });
                 });
 

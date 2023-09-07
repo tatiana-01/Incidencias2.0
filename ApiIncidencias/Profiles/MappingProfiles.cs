@@ -123,6 +123,8 @@ public class MappingProfiles : Profile
         CreateMap<Usuario, UsuarioGetAllDTO>().ReverseMap();
         CreateMap<Usuario, UsuarioPostDTO>().ReverseMap();
 
+        CreateMap<UsuarioRol, UsuarioRolDTO>().ReverseMap();
+
         CreateMap<Verificacion, VerificacionDTO>().ReverseMap();
         CreateMap<Verificacion, VerificacionPostDTO>().ReverseMap();
 
