@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Persistencia;
 
@@ -10,9 +11,11 @@ using Persistencia;
 namespace Persistencia.Data.Migraciones
 {
     [DbContext(typeof(IncidenciasContext))]
-    partial class IncidenciasContextModelSnapshot : ModelSnapshot
+    [Migration("20230907125251_nuevaDB")]
+    partial class nuevaDB
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -415,7 +418,7 @@ namespace Persistencia.Data.Migraciones
                         new
                         {
                             Id = "123456",
-                            FechaNacimiento = new DateOnly(2023, 9, 11),
+                            FechaNacimiento = new DateOnly(2023, 9, 7),
                             IdGenero = 1,
                             Nombre = "Admin"
                         });
@@ -581,28 +584,6 @@ namespace Persistencia.Data.Migraciones
                     b.ToTable("TipoIncidencias");
                 });
 
-            modelBuilder.Entity("Dominio.Entidades.UserRefreshToken", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    b.Property<bool>("IsActive")
-                        .HasColumnType("tinyint(1)");
-
-                    b.Property<string>("RefreshToken")
-                        .IsRequired()
-                        .HasColumnType("longtext");
-
-                    b.Property<string>("UserName")
-                        .IsRequired()
-                        .HasColumnType("longtext");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("UserRefreshTokens");
-                });
-
             modelBuilder.Entity("Dominio.Entidades.Usuario", b =>
                 {
                     b.Property<int>("Id")
@@ -638,7 +619,7 @@ namespace Persistencia.Data.Migraciones
                         new
                         {
                             Id = 1,
-                            Contraseña = "AQAAAAIAAYagAAAAEJfxiKFuhEKJITRPemsjhpsIMb5vBp2vAszOXEyBLxu9lHZQ+fRVp79h0jHkg30ABQ==",
+                            Contraseña = "AQAAAAIAAYagAAAAECbBDKkKGLvLFGr+5ZbYRyMyq+S700hdhyIYz/2s7m1fPoNJxNBrenrzcX2aIsR8+A==",
                             Email = "admin@corre.com",
                             IdPersona = "123456",
                             UsuarioPersona = "Admin"

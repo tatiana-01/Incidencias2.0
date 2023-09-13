@@ -40,10 +40,23 @@ public class UnitOfWork : IUnitOfWork, IDisposable
     private UsuarioRepository _usuarios;
     private UsuarioRolRepository _usuarioRoles;
     private VerificacionRepository _verificaciones;
+    private UserRefreshTokenRepository _userRefreshTokens;
 
     public UnitOfWork(IncidenciasContext _context)
     {
         context = _context;
+    }
+
+     public IUserRefreshToken UserRefreshTokens
+    {
+        get
+        {
+            if (_userRefreshTokens == null)
+            {
+                _userRefreshTokens = new UserRefreshTokenRepository(context);
+            }
+            return _userRefreshTokens;
+        }
     }
 
     public IArea Areas

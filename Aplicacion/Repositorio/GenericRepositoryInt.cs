@@ -69,5 +69,9 @@ public class GenericRepositoryInt<T> : IGenericRepositoryInt<T> where T : Entida
         _context.Set<T>()
             .Update(entity);
     }
+
+    public virtual T FirstOrDefault(Expression<Func<T, bool>> expression){
+         return _context.Set<T>().FirstOrDefault(expression);
+    }
 }
 

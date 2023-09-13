@@ -21,7 +21,7 @@ namespace ApiIncidencias.Controllers
         {
             this._unitOfWork = unitOfWork;
             _mapper = mapper;
-            _userService=userService;
+            _userService = userService;
         }
 
         [HttpPost("agregar")]
@@ -36,7 +36,7 @@ namespace ApiIncidencias.Controllers
         }
 
         [HttpGet("todos")]
-        [Authorize(Roles ="Administrador")]
+        [Authorize(Roles = "Administrador")]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public async Task<ActionResult<Pager<UsuarioDTO>>> Get([FromQuery] Params param)
@@ -47,7 +47,7 @@ namespace ApiIncidencias.Controllers
         }
 
         [HttpGet("{id}")]
-        [Authorize(Roles ="Administrador")]
+        [Authorize(Roles = "Administrador")]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public async Task<ActionResult<UsuarioDTO>> Get(int id)
@@ -71,7 +71,7 @@ namespace ApiIncidencias.Controllers
         }
 
         [HttpDelete("{id}")]
-        [Authorize(Roles ="Administrador")]
+        [Authorize(Roles = "Administrador")]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public async Task<ActionResult> Delete(int id)
@@ -84,10 +84,55 @@ namespace ApiIncidencias.Controllers
         }
 
         [HttpPost("token")]
-       public async Task<IActionResult> GetTokenAsync(LoginDTO model){
-        var result = await _userService.GetTokenAsync(model);
-        return Ok(result);
-       }
+        public async Task<IActionResult> GetTokenAsync(LoginDTO model)
+        {
+            var result = await _userService.GetTokenAsync(model);
+            UserRefreshToken obj = new UserRefreshToken
+            {
+                RefreshToken = result.RefreshToken,
+                UserName = model.Username
+            };
 
+            _unitOfWork.UserRefreshTokens.Add(obj);
+            await _unitOfWork.SaveAsync();
+            return Ok(result);
+        }
+
+        [HttpPost]
+        [Route("refresh")]
+        [ProducesResponseType(StatusCodes.Status204NoContent)]
+        public async Task<IActionResult>  Refresh(Tokens token)
+        {
+            var principal = _userService.GetPrincipalFromExpiredToken(token.Access_Token);
+            var username = principal.Identity.Name;
+
+            //retrieve the saved refresh token from database
+            var savedRefreshToken = _userService.GetSavedRefreshTokens(username, token.Refresh_Token);
+
+            if (savedRefreshToken.RefreshToken != token.Refresh_Token)
+            {
+                return Unauthorized("Invalid attempt!");
+            } 
+
+            var newJwtToken = _userService.GenerateRefreshToken(username);
+
+            if (newJwtToken == null)
+            {
+                return Unauthorized("Invalid attempt!");
+            }
+
+            // saving refresh token to the db
+            UserRefreshToken obj = new UserRefreshToken
+            {
+                RefreshToken = newJwtToken.Refresh_Token,
+                UserName = username
+            };
+
+            _userService.DeleteUserRefreshTokens(username, token.Refresh_Token);
+            _unitOfWork.UserRefreshTokens.Add(obj);
+            await _unitOfWork.SaveAsync();
+            
+            return Ok(newJwtToken); 
+        }
     }
 }

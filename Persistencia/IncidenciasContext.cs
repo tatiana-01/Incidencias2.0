@@ -43,6 +43,7 @@ public class IncidenciasContext : DbContext
     public DbSet<Usuario> Usuarios { get; set; }
     public DbSet<UsuarioRol> UsuarioRoles { get; set; }
     public DbSet<Verificacion> Verificaciones { get; set; }
+    public virtual DbSet<UserRefreshToken> UserRefreshTokens { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {

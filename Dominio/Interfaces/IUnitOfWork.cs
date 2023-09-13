@@ -35,6 +35,7 @@ namespace Dominio.Interfaces
         IUsuario Usuarios {get;}
         IUsuarioRol UsuarioRoles {get;}
         IVerificacion Verificaciones {get;}
+        IUserRefreshToken UserRefreshTokens{get;}
         Task<int> SaveAsync();
     }
     

@@ -17,6 +17,7 @@ namespace Dominio.Interfaces;
         void Remove(T entity);
         void RemoveRange(IEnumerable<T> entities);
         void Update(T entity);
+        T FirstOrDefault(Expression<Func<T, bool>> value);
     }
 
 
