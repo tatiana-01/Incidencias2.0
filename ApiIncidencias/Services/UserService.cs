@@ -223,12 +223,11 @@ public class UserService : IUserService
         {
             ValidateIssuer = true,
             ValidateAudience = true,
-            ValidateLifetime = true,
+            ValidateLifetime = false,
             ValidateIssuerSigningKey = true,
             ValidIssuer = _jwt.Issuer,
             ValidAudience = _jwt.Audience,
-            IssuerSigningKey = new SymmetricSecurityKey(Key),
-            ClockSkew = TimeSpan.Zero
+            IssuerSigningKey = new SymmetricSecurityKey(Key)
         };
 
 
